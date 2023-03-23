@@ -1,10 +1,3 @@
-/**
-* Template Name: OnePage - v4.10.0
-* Template URL: https://bootstrapmade.com/onepage-multipurpose-bootstrap-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -220,11 +213,14 @@ h6 {
   color: #fff;
 }
 
+
 .navbar .getstarted:hover,
 .navbar .getstarted:focus:hover {
   color: #fff;
   background: #3194db;
 }
+
+.upload-video .getstarted,.upload-video .get
 
 .navbar .dropdown ul {
   display: block;
@@ -1099,6 +1095,18 @@ section {
   opacity: 1;
 }
 
+/*--------------------------------------------------------------
+# Caption
+--------------------------------------------------------------*/
+ .caption {
+   position: absolute;
+   bottom: 0;
+   background-color: rgba(0, 0, 0, 0.5);
+   width: 100%;
+   padding: 10px;
+   color: #fff;
+   font-size: 16px;
+ }
 
 /*--------------------------------------------------------------
 # Frequently Asked Questions
