@@ -272,3 +272,17 @@
   new PureCounter();
 
 })()
+
+/**
+ * Edit caption Button
+ */
+$(document).ready(function() {
+  // Disable the text box on page load
+  $('#generated-caption').prop('disabled', true);
+  
+  // When the button is clicked, enable the text box and change the button text
+  $('#button-edit-caption').on('click', function() {
+    $('#generated-caption').prop('disabled', false);
+    $(this).text('Save caption');
+  });
+});
