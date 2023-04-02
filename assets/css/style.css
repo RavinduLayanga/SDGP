@@ -220,7 +220,7 @@ h6 {
   background: #3194db;
 }
 
-.upload-video .getstarted,.upload-video .get
+.upload-video .getstarted,.upload-video .get, upload-caption .getstarted, upload-caption .get,
 
 .navbar .dropdown ul {
   display: block;
@@ -639,7 +639,8 @@ section {
     font-weight: bold;
     margin-bottom: 10px;
   }
-  #video-upload-section input[type="text"], #video-upload-section input[type="file"] {
+  #video-upload-section input[type="text"],
+  #video-upload-section input[type="file"] {
     border: 1px solid #ccc;
     padding: 10px;
     margin-bottom: 20px;
@@ -656,6 +657,57 @@ section {
   #video-upload-section input[type="file"]:hover {
     background-color: #ddd;
   }
+
+  #caption-upload-section {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: #E6EDF1;
+  }
+  
+  #caption-upload-section form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #caption-upload-section label {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #generated-caption {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #777;
+  }
+  
+  #generated-caption::placeholder {
+    color: #999;
+    font-style: italic;
+  }
+  
+  .button-edit-caption {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    padding: 14px 50px;
+    border-radius: 5px;
+    transition: 0.5s;
+    margin-top: 30px;
+    color: #fff;
+    background: #2487ce;
+  }
+  
+  .button-edit-caption:hover {
+    background: #3194db;
+  }
+
 
 /*--------------------------------------------------------------
 # About Video

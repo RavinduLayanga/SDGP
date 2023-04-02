@@ -268,7 +268,9 @@
       </section>
       <!-- End Upload Video Section -->
 
-      <section id="upload-captuion" class="upload-caption">
+      <!--Upload caption and edit caption Section-->>
+
+      <section id="upload-caption" class="upload-caption">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
             <h2>Generated high quality auto captions</h2>
@@ -276,17 +278,18 @@
           </div>
 
           <div class="row">
-            <div id="video-upload-section">
+            <div id="caption-upload-section">
               <form>
-                <label for="video-link">Generated autocaption is given below</label>
-                <input type="text" id="video-link" name="video-link" placeholder="Generated autocaption displays here">
+                <label for="generated-caption">Generated autocaption is given below</label>
+                <input type="text" id="generated-caption" name="generated-caption" placeholder="Generated autocaption displays here" disabled>
                 <br><br>
               </form>
-              <button><a class="getstarted scrollto" href="#about">Edit caption</a></button>
+              <button><a class="getstarted scrollto" href="#about" id="button-edit-caption" onclick="toggleTextField()">Edit caption</a></button>
             </div>
           </div>
         </div>
       </section>
+      <!--End Upload caption and edit caption Section-->>
 
       <!-- ======= Testimonials Section ======= -->
       <section id="testimonials" class="testimonials">
