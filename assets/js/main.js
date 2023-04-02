@@ -273,16 +273,51 @@
 
 })()
 
-/**
- * Edit caption Button
- */
-$(document).ready(function() {
-  // Disable the text box on page load
-  $('#generated-caption').prop('disabled', true);
-  
-  // When the button is clicked, enable the text box and change the button text
-  $('#button-edit-caption').on('click', function() {
-    $('#generated-caption').prop('disabled', false);
-    $(this).text('Save caption');
-  });
-});
+
+//JavaScript code to toggle the disabled attribute of the text field and the text on the edit-caption button
+
+function toggleTextField() {
+  const textField = document.getElementById("generated-caption");
+  const editCaptionBtn = document.getElementById("button-edit-caption");
+
+  // Load text from file into text field
+  fetch('testing.txt')
+    .then(response => response.text())
+    .then(data => {
+      textField.value = data;
+    })
+    .catch(error => {
+      console.log("Error: File not found");
+    });
+
+  if (textField.disabled) {
+    // Enable text field and change button text to "Save caption"
+    textField.disabled = false;
+    editCaptionBtn.innerHTML = "Save caption";
+
+    // Add event listener to save changes to file
+    function saveCaption() {
+      const updatedText = textField.value;
+      fetch('testing.txt', {
+        method: 'PUT',
+        body: updatedText,
+      })
+      .catch(error => {
+        console.log("Error: File not found");
+      });
+      textField.removeEventListener("input", saveCaption);
+      editCaptionBtn.onclick = toggleTextField;
+      editCaptionBtn.innerHTML = "Edit caption";
+      textField.disabled = true;
+    }
+    textField.addEventListener("input", saveCaption);
+    editCaptionBtn.onclick = saveCaption;
+  } else {
+    // Disable text field and change button text to "Edit caption"
+    textField.disabled = true;
+    editCaptionBtn.innerHTML = "Edit caption";
+
+    // Remove event listener
+    textField.removeEventListener("input", function() {});
+  }
+}
