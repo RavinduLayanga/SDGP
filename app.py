@@ -1,6 +1,6 @@
 from flask import Flask, render_template, send_file
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='static')
 
 
 @app.route('/index.html')
