@@ -1,8 +1,8 @@
-from app import Flask, render_template
+from flask import Flask, render_template, send_file
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/index')
 def home():
     return render_template('index.html')
 
@@ -13,11 +13,6 @@ def register():
 @app.route('/login')
 def login():
     return render_template('login.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)
-
-from app import send_file
 
 @app.route('/rest-project')
 def rest_project():
@@ -33,10 +28,12 @@ def video_framing():
                      as_attachment=True,
                      attachment_filename='video_Framing.ipynb')
 
-@app.route('/sign-language-model')
-def sign_language_model():
-    return send_file('notebooks/Copy of Model for sign language recognition for 1GB dataset.ipynb',
+@app.route('/model')
+def model():
+    return send_file('notebooks/CNNModel.h5',
                      mimetype='application/json',
                      as_attachment=True,
-                     attachment_filename='Model for sign language recognition.ipynb')
+                     attachment_filename='CNNModel.h5')
 
+if __name__ == '__main__':
+    app.run(debug=True)
