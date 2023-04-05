@@ -281,7 +281,7 @@ function toggleTextField() {
   const editCaptionBtn = document.getElementById("button-edit-caption");
 
   // Load text from file into text field
-  fetch('testing.txt')
+  fetch('captions.txt')
     .then(response => response.text())
     .then(data => {
       textField.value = data;
@@ -298,7 +298,7 @@ function toggleTextField() {
     // Add event listener to save changes to file
     function saveCaption() {
       const updatedText = textField.value;
-      fetch('testing.txt', {
+      fetch('captions.txt', {
         method: 'PUT',
         body: updatedText,
       })
