@@ -321,3 +321,13 @@ function toggleTextField() {
     textField.removeEventListener("input", function() {});
   }
 }
+
+document.getElementById("get-link").addEventListener("submit", function(event) {
+  event.preventDefault();
+  var data = document.getElementById("video-link").value;
+  // fetch("/ideo-framing", {
+  //   method: "POST",
+  //   body: JSON.stringify({data: data}),
+  //   headers: {"Content-Type": "application/json"}
+  // })
+});
