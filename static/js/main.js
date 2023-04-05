@@ -281,7 +281,7 @@ function toggleTextField() {
   const editCaptionBtn = document.getElementById("button-edit-caption");
 
   // Load text from file into text field
-  fetch('captions.txt')
+  fetch('/notebooks/captions.txt')
     .then(response => response.text())
     .then(data => {
       textField.value = data;
@@ -298,7 +298,7 @@ function toggleTextField() {
     // Add event listener to save changes to file
     function saveCaption() {
       const updatedText = textField.value;
-      fetch('captions.txt', {
+      fetch('/notebooks/captions.txt', {
         method: 'PUT',
         body: updatedText,
       })
@@ -321,3 +321,13 @@ function toggleTextField() {
     textField.removeEventListener("input", function() {});
   }
 }
+
+document.getElementById("get-link").addEventListener("submit", function(event) {
+  event.preventDefault();
+  var data = document.getElementById("video-link").value;
+  // fetch("/ideo-framing", {
+  //   method: "POST",
+  //   body: JSON.stringify({data: data}),
+  //   headers: {"Content-Type": "application/json"}
+  // })
+});
