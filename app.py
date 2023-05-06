@@ -1,7 +1,7 @@
 from flask import Flask, render_template, send_file
 from flask_sqlalchemy import SQLAlchemy
 
-app = Flask(__name__, static_folder='static')
+app = Flask(_name_, static_folder='static')
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///signscribe.db"
 db = SQLAlchemy(app)
 
@@ -10,7 +10,7 @@ class SignscribeModel(db.Model):
     name = db.Column(db.String(80), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
 
-    def _repr_(self):
+    def repr(self):
         return '<User %r>' % self.name 
 
 @app.route('/index.html')
@@ -46,6 +46,6 @@ def model():
                      as_attachment=True,
                      attachment_filename='CNNModel.h5')
 
-if __name__ == '_main_':
+if _name_ == 'main':
     db.create_all()
     app.run(debug=True)
