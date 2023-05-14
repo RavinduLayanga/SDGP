@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Sign Scribe- Register</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon" />
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <main>
+      <div class="container">
+        <section
+          class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4"
+        >
+          <div class="container">
+            <div class="row justify-content-center">
+              <div
+                class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center"
+              >
+                <div class="d-flex justify-content-center py-4">
+                  <a
+                    href="index.html"
+                    class="logo d-flex align-items-center w-auto"
+                  >
+                    <img src="assets/img/logo1.png" alt="" />
+                    <span class="d-none d-lg-block"></span>
+                  </a>
+                </div>
+                <!-- End Logo -->
+
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <div class="pt-4 pb-2">
+                      <h5 class="card-title text-center pb-0 fs-4">
+                        Create an Account
+                      </h5>
+                      <p class="text-center small">
+                        Enter your personal details to create account
+                      </p>
+                    </div>
+
+                    <form class="row g-3 needs-validation" novalidate>
+                      <div class="col-12">
+                        <label for="user" class="form-label"
+                          >User Name</label
+                        >
+                        <input
+                          type="text"
+                          name="user"
+                          class="form-control"
+                          id="user"
+                          placeholder="Username"
+                          required
+                        />
+                        
+                        
+                      </div>
+
+                      <div class="col-12">
+                        <label for="email" class="form-label"
+                          >E-mail</label
+                        >
+                        <div class="input-group has-validation">
+                          <span class="input-group-text" id="inputGroupPrepend"
+                            >@</span
+                          >
+                          <input
+                            type="text"
+                            name="emaii"
+                            class="form-control"
+                            id="email"
+                            placeholder="Email"
+                            required
+                          />
+                        </div>
+
+                      </div>
+
+                      <div class="col-12">
+                        <label for="password" class="form-label"
+                          >Password</label
+                        >
+                        <input
+                          type="password"
+                          name="password"
+                          class="form-control"
+                          id="password"
+                          placeholder="Password"
+                          required
+                        />
+                       </div>
+
+                       <div class="col-12">
+                        <label for="copassword" class="form-label"
+                          >Confirm Password</label
+                        >
+                        <input
+                          type="password"
+                          name="copassword"
+                          class="form-control"
+                          id="copassword"
+                          placeholder="Confirm Password"
+                          required
+                        />
+                       </div>
+
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            name="terms"
+                            type="checkbox"
+                            value=""
+                            id="acceptTerms"
+                            required
+                          />
+                          <label class="form-check-label" for="acceptTerms"
+                            >I agree and accept the
+                            <a href="#">terms and conditions</a></label
+                          >
+                          
+                        
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <button id="signup" name="signup" class="btn btn-primary w-100" type="submit">
+                          Create Account
+                        </button>
+                      </div>
+                      <div class="col-12">
+                        <p class="small mb-0">
+                          Already have an account?
+                          <a href="signUp.html">Log in</a>
+                        </p>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+
+                <div class="credits">
+                  Designed by
+                  <a href="https://bootstrapmade.com/" target="_blank">Sign Scribe</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <!-- End #main -->
+  </body>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js"
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBuRkqae8G4p4D4THWyD_8V6g-Jv1TnvJw",
+      authDomain: "sign-scribe.firebaseapp.com",
+      databaseURL: "https://sign-scribe-default-rtdb.firebaseio.com",
+      projectId: "sign-scribe",
+      storageBucket: "sign-scribe.appspot.com",
+      messagingSenderId: "1050393700484",
+      appId: "1:1050393700484:web:c48d8d51e93c271706fad1"
+    };
+    
+     // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const auth = getAuth();
+
+  signup.addEventListener('click', (e) => {
+
+    e.preventDefault();
+
+    var email = document.getElementById('email').value;
+    var user = document.getElementById('user').value;
+    var password = document.getElementById('password').value;
+    var copassword = document.getElementById('copassword').value;
+
+    if (!email || !user || !password || !copassword) {
+      alert('Please fill in all the fields');
+      return;
+    }
+
+    if (password !== copassword) {
+      alert('Passwords do not match');
+      return;
+    }
+
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+
+        // Add user details to database
+        const userRef = ref(database, 'users/' + user.uid);
+        set(userRef, {
+          email: email,
+          user: user,
+          
+        });
+
+        alert('You have successfully signed up !');
+        window.location.href = "Main.html"; // Replace with the URL of your index page
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+
+        alert(errorMessage);
+      });
+  })
+
+;
+</script>
+  
+</html>
